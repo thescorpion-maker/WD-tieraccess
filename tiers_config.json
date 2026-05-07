@@ -10,14 +10,13 @@
     "27164484": "Dare Immortal"
   },
   "version_access": {
-    "0.5": ["27164484"]
   },
   "updates": {
     "sandbox": {
-      "latest_version": "0.5",
-      "update_allowed_tiers": ["27164484"],
+      "latest_version": "0.4",
+      "update_allowed_tiers": [],
       "downloads": {
-        "pc":  { "version": "0.5", "url": "https://github.com/apoorv601/WD-tieraccess/releases/download/v0.5-patch/WifesDare-Re-v0.5-patch-pc.zip", "size_mb": 685 },
+        "pc":  { "version": "0.4", "url": "", "size_mb": 0 },
         "mac": { "version": "0.4", "url": "", "size_mb": 0 }
       }
     },
