@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wife's Dare – Patreon Auth</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+      background: #0a0a1a;
+      color: #fff;
+      min-height: 100vh;
+    }
+    h2 { font-size: 22px; margin-bottom: 10px; }
+    .success h2 { color: #28a745; }
+    .error   h2 { color: #ff6b6b; }
+    .subtitle {
+      color: #aaa;
+      font-size: 15px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    #code-box {
+      display: block;
+      margin: 0 auto 18px;
+      width: 90%;
+      max-width: 520px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-family: monospace;
+      background: #1a1a2e;
+      color: #FFD700;
+      border: 1px solid #3a3a55;
+      border-radius: 8px;
+      text-align: center;
+      word-break: break-all;
+      user-select: all;
+    }
+    .copy-btn {
+      display: inline-block;
+      padding: 13px 36px;
+      background: #f96854;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .copy-btn:active { background: #d9503c; }
+    .copy-btn.copied { background: #28a745; }
+    .hint {
+      margin-top: 28px;
+      color: #444;
+      font-size: 12px;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div id="success" class="success hidden">
+    <h2>Almost there!</h2>
+    <p class="subtitle">Copy the code below and paste it in the game.</p>
+    <div id="code-box"></div>
+    <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy Code</button>
+    <p class="hint">Return to the game and paste the code there.</p>
+  </div>
+
+  <div id="error" class="error hidden">
+    <h2>Authentication Cancelled</h2>
+    <p class="subtitle">Close this window and try again in the game.</p>
+  </div>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var code   = params.get('code');
+    var err    = params.get('error');
+
+    if (code) {
+      document.getElementById('code-box').textContent = code;
+      document.getElementById('success').classList.remove('hidden');
+    } else {
+      document.getElementById('error').classList.remove('hidden');
+    }
+
+    function copyCode() {
+      var text = document.getElementById('code-box').textContent;
+      var btn  = document.getElementById('copy-btn');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+        });
+      } else {
+        // Fallback for older Android browsers
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity  = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+      }
+    }
+  </script>
+
+</body>
+</html>
