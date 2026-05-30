@@ -23,7 +23,7 @@
     },
     "vn": {
       "latest_version": "0.5",
-      "update_allowed_tiers": [],
+      "update_allowed_tiers": ["27164484", "27164453"],
       "downloads": {
         "pc":  { "version": "0.5", "url": "", "size_mb": 0 },
         "mac": { "version": "0.5", "url": "", "size_mb": 0 }
