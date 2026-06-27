@@ -1,5 +1,5 @@
 {
-  "allowed_tiers": ["27164484", "27164453", "27164419", "27164394"],
+  "allowed_tiers": ["27164484", "27164453", "27164419", "27164394", "27098000"],
   "_tier_reference": {
     "27097555": "Free",
     "27615559": "Dare Starters",
@@ -10,23 +10,24 @@
     "27164484": "Dare Immortal"
   },
   "version_access": {
-    "0.5": ["27164484", "27164453"]
+    "0.5": ["27164484", "27164453", "27164419"],
+    "0.6": ["27164484", "27164453"]
   },
   "updates": {
     "sandbox": {
-      "latest_version": "0.5",
-      "update_allowed_tiers": ["27164484", "27164453"],
+      "latest_version": "0.6",
+      "update_allowed_tiers": [],
       "downloads": {
-        "pc":  { "version": "0.5", "url": "https://github.com/apoorv601/WD-tieraccess/releases/download/v0.5-patch/WifesDare-Re-v0.5-patch-pc.zip", "size_mb": 685 },
-        "mac": { "version": "0.4", "url": "", "size_mb": 0 }
+        "pc":  { "version": "0.6", "url": "", "size_mb": 0 },
+        "mac": { "version": "0.6", "url": "", "size_mb": 0 }
       }
     },
     "vn": {
-      "latest_version": "0.5",
-      "update_allowed_tiers": ["27164484", "27164453"],
+      "latest_version": "0.6",
+      "update_allowed_tiers": [],
       "downloads": {
-        "pc":  { "version": "0.5", "url": "", "size_mb": 0 },
-        "mac": { "version": "0.5", "url": "", "size_mb": 0 }
+        "pc":  { "version": "0.6", "url": "", "size_mb": 0 },
+        "mac": { "version": "0.6", "url": "", "size_mb": 0 }
       }
     }
   }
